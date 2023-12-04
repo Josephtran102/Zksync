@@ -40,13 +40,16 @@ var zksync = require("zksync-web3");
 var ethers = require("ethers");
 var dotenv = require("dotenv");
 dotenv.config();
+// Load PRIVATE_KEY in .env file
 var privateKey = process.env.PRIVATE_KEY;
 if (!privateKey) {
     throw new Error('Private key is not defined in the .env file.');
 }
 var provider = new zksync.Provider("https://testnet.era.zksync.dev");
 var wallet = new zksync.Wallet(privateKey).connect(provider);
+// Receive Address:
 var receiverWallet = "0x8fD344b274Db0F5da89822E41DCAC9F342aD8aa6";
+// Token Address:
 var _JOS = "0xfb525657e563369CB299E705d6129D1Cc3a63082";
 function l2transfer() {
     return __awaiter(this, void 0, void 0, function () {
@@ -77,7 +80,7 @@ function l2transfer() {
                     return [4 /*yield*/, transfer.wait()];
                 case 4:
                     transferReceipt = _w.sent();
-                    console.log("Tx transfer hash for DAI: ".concat(transferReceipt.blockHash));
+                    console.log("Tx transfer hash for JOSE: ".concat(transferReceipt.blockHash));
                     _m = (_l = console).log;
                     _o = "FROM this L2 wallet: \"".concat;
                     _q = (_p = ethers.utils).formatUnits;
@@ -97,3 +100,4 @@ function l2transfer() {
 }
 l2transfer().catch(function (error) { return console.error(error); });
 // npx ts-node transfer-l2.ts
+// Compile TypeScript to java= npx tsc transfer-l2.ts

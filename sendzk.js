@@ -27,7 +27,7 @@ async function main() {
 
   // Sử dụng cùng cách khai báo như trên để tạo wallet thứ hai
   const privateKey2 = process.env.PRIVATE_KEY2; // Cần phải khai báo PRIVATE_KEY2 từ môi trường hoặc giá trị khác
-  const wallet2 = new ZkSyncWallet(privateKey2);
+  const wallet2 = new ZkSyncWallet(privateKey2).connect(provider);
 
   const amount = ethers.utils.parseEther("0.0001");
 
@@ -37,7 +37,8 @@ async function main() {
     amount,
   });
 
-    
+  const transferReceipt = await transfer.wait();
+  console.log(`Tx transfer hash: ${transferReceipt.transactionHash}`);
 }
 
 main().catch(error => {
