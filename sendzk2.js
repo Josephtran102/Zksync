@@ -7,8 +7,8 @@ const privateKey = process.env.PRIVATE_KEY;
 const zkSyncProvider = new zksync.Provider("https://testnet.era.zksync.dev");
 const zkSyncWallet = new zksync.Wallet(privateKey).connect(zkSyncProvider);
 
-const receiverWallet = "0x8fD344b274Db0F5da89822E41DCAC9F342aD8aa6";
-const _JOSE = "0xfb525657e563369CB299E705d6129D1Cc3a63082";
+const receiverWallet = "";
+const _JOSE = "";
 
 async function l2transfer() {
   const amount = ethers.BigNumber.from("1000000000000000000");

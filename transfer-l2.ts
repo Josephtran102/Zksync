@@ -10,8 +10,8 @@ if (!privateKey) {
 const provider = new zksync.Provider("https://testnet.era.zksync.dev");
 const wallet = new zksync.Wallet(privateKey).connect(provider);
 
-const receiverWallet = "0x8fD344b274Db0F5da89822E41DCAC9F342aD8aa6"; 
-const _JOS = "0xfb525657e563369CB299E705d6129D1Cc3a63082"; 
+const receiverWallet = ""; 
+const _JOS = ""; 
 
 async function l2transfer() {
     const amount = ethers.utils.parseUnits("1000", 18); // Change Token quantity: 1000 
