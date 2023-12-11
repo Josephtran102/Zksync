@@ -1,6 +1,6 @@
 const { Wallet: ZkSyncWallet, Provider } = require("zksync-web3");
 const ethers = require("ethers");
-require('dotenv').config(); // Đọc các biến môi trường từ file .env
+require('dotenv').config(); 
 const zksync = require("zksync");
 
 const privateKey = process.env.PRIVATE_KEY;
