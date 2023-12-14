@@ -29,7 +29,7 @@ async function main() {
   const privateKey2 = process.env.PRIVATE_KEY2; // Cần phải khai báo PRIVATE_KEY2 từ môi trường hoặc giá trị khác
   const wallet2 = new ZkSyncWallet(privateKey2).connect(provider);
 
-  const amount = ethers.utils.parseEther("0.0001");
+  const amount = ethers.utils.parseEther("0.00001");
 
   const transfer = await wallet.transfer({
     to: wallet2.address,
