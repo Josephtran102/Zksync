@@ -38,7 +38,7 @@ async function main() {
   });
 
   const transferReceipt = await transfer.wait();
-  console.log(`Tx transfer hash: ${transferReceipt.transactionHash}`);
+  console.log('\x1b[45m\x1b[37m', `Tx transfer hash: ${transferReceipt.transactionHash}`);
 }
 
 main().catch(error => {
