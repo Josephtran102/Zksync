@@ -8,7 +8,7 @@ const zkSyncProvider = new zksync.Provider("https://testnet.era.zksync.dev");
 const zkSyncWallet = new zksync.Wallet(privateKey).connect(zkSyncProvider);
 
 const receiverWallet = "";
-const _JOSE = "";
+const _JOSE = "";// contract token
 
 async function l2transfer() {
   const amount = ethers.BigNumber.from("1000000000000000000");
